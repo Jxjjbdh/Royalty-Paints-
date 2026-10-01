@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Royalty Paints products: emulsion, satin silk, textcoat, matt, flexcoat, POR, filler, marine coat, undercoat, gloss, varnish and wood finish.">
+  <meta name="theme-color" content="#071b69">
+  <script>
+    (() => {
+      try {
+        const storedTheme = localStorage.getItem("royaltyTheme");
+        const theme = storedTheme === "light" || storedTheme === "dark" ? storedTheme : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+  <title>Products | Royalty Paints</title>
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="expect" href="#rpHero" blocking="render">
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container header-shell">
+        <a class="navbar-brand brand-link" href="index.html" aria-label="Royalty Paints home">
+          <span class="logo-swap">
+            <img class="theme-logo logo-for-light" src="assets/img/logo.png" alt="Royalty Paints logo">
+            <img class="theme-logo logo-for-dark" src="assets/img/logo-dark.png" alt="Royalty Paints logo">
+          </span>
+        </a>
+        <input class="nav-toggle" type="checkbox" id="navToggle" aria-label="Open navigation menu">
+        <label class="menu-button" for="navToggle" aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <div class="site-menu">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="products.html">Products</a>
+          <a class="nav-link" href="projects.html">Projects</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link" href="index.html#reviews">Reviews</a>
+          <a class="nav-link" href="admin.html">Admin</a>
+          <a class="btn btn-royal nav-cta px-4 py-2" href="https://wa.me/2347035109011?text=Hello%20Royalty%20Paints,%20I%20need%20a%20paint%20quotation" target="_blank" rel="noopener">Get Quote</a>
+        </div>
+        <input class="theme-mode-checkbox header-theme-checkbox" type="checkbox" id="themeToggle" data-theme-toggle aria-label="Switch to dark mode">
+        <label class="theme-toggle-button header-theme-toggle" for="themeToggle" aria-label="Switch to dark mode">
+          <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">☀</span>
+          <span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">☾</span>
+        </label>
+        <script>
+          (() => {
+            const box = document.getElementById("themeToggle");
+            if (box) box.checked = document.documentElement.getAttribute("data-theme") !== "dark";
+          })();
+        </script>
+        <label class="menu-backdrop" for="navToggle" aria-hidden="true"></label>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="rpHero" class="page-hero">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 reveal">
+            <div class="breadcrumb-soft"><a href="index.html">Home</a><span>›</span><span>Products</span></div>
+            <h1 class="page-title">Paint products for clean coverage and lasting colour.</h1>
+            <p class="section-copy max-720">Royalty Paints manufactures quality paint products for residential, commercial and industrial projects. Choose smooth interior finishes, strong exterior coatings and premium wood/gloss options.</p>
+            <div class="hero-actions">
+              <a class="btn btn-royal btn-lg px-4 py-3" href="contact.html">Ask for Product Pricing</a>
+              <a class="btn btn-glass btn-lg px-4 py-3" href="#product-table">View Product List</a>
+            </div>
+          </div>
+          <div class="col-lg-5 reveal reveal-delay-1">
+            <div class="glass-card p-3 lift-card">
+              <img class="rounded-4xl" src="assets/img/web/brand-buckets.jpg" alt="Royalty Paints brand bucket samples" style="height:520px;width:100%;object-fit:contain;background:linear-gradient(135deg,#eef4ff,#fff8ea);" fetchpriority="high" decoding="sync">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding-sm">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4 reveal" id="emulsion">
+            <article class="product-card glass-card lift-card">
+              <img class="product-thumb" src="assets/img/web/bucket-emulsion.jpg" alt="Royalty Emulsion paint bucket">
+              <h3>Royalty Emulsion</h3>
+              <p>Reliable wall paint for smooth interior coverage, soft colour and everyday durability.</p>
+              <div class="product-tags"><span class="tag">Interior</span><span class="tag">Smooth finish</span><span class="tag">Residential</span></div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4 reveal reveal-delay-1" id="satin">
+            <article class="product-card glass-card lift-card">
+              <img class="product-thumb" src="assets/img/web/bucket-satin.jpg" alt="Royalty Satin Silk paint bucket">
+              <h3>Satin Silk</h3>
+              <p>Premium washable sheen for living rooms, corridors, offices, hotels and statement walls.</p>
+              <div class="product-tags"><span class="tag">Washable</span><span class="tag">Premium</span><span class="tag">Soft sheen</span></div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4 reveal reveal-delay-2" id="textcoat">
+            <article class="product-card glass-card lift-card">
+              <img class="product-thumb" src="assets/img/web/bucket-textcoat.jpg" alt="Royalty Textcoat paint bucket">
+              <h3>Textcoat & Stucco</h3>
+              <p>Beautiful textured coatings for exterior walls, facades and premium finishing effects.</p>
+              <div class="product-tags"><span class="tag">Exterior</span><span class="tag">Texture</span><span class="tag">Durable</span></div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4 reveal" id="flexcoat">
+            <article class="product-card glass-card lift-card">
+              <img class="product-thumb" src="assets/img/web/bucket-flexcoat.jpg" alt="Royalty Flexcoat paint bucket">
+              <h3>Flexcoat</h3>
+              <p>Flexible coating support for exterior surfaces where protection and resilience matter.</p>
+              <div class="product-tags"><span class="tag">Exterior</span><span class="tag">Flexible</span><span class="tag">Protective</span></div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4 reveal reveal-delay-1" id="gloss">
+            <article class="product-card glass-card lift-card">
+              <img class="product-thumb" src="assets/img/web/bucket-gloss.jpg" alt="Royalty Gloss and wood finish paint bucket">
+              <h3>Gloss, Varnish & Wood Finish</h3>
+              <p>Elegant gloss and wood protection for doors, trims, railings, furniture and special details.</p>
+              <div class="product-tags"><span class="tag">Wood</span><span class="tag">Gloss</span><span class="tag">Varnish</span></div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4 reveal reveal-delay-2" id="undercoat">
+            <article class="product-card glass-card lift-card">
+              <img class="product-thumb" src="assets/img/web/bucket-specialty.jpg" alt="Royalty special coats paint bucket">
+              <h3>Undercoat, Filler & Special Coats</h3>
+              <p>Surface preparation and special coatings including Royalty Filler, Under Coat, Marine Coat and POR.</p>
+              <div class="product-tags"><span class="tag">Preparation</span><span class="tag">Special use</span><span class="tag">Support</span></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding-sm" id="product-table">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5 reveal">
+            <span class="section-kicker">Product List</span>
+            <h2 class="section-title display-5">All products at a glance.</h2>
+            <p class="section-copy">A clear overview of Royalty Paints products and their best uses.</p>
+          </div>
+          <div class="col-lg-7 reveal reveal-delay-1">
+            <div class="glass-card p-3 p-md-4">
+              <div class="table-responsive">
+                <table class="table table-soft align-middle mb-0">
+                  <thead>
+                    <tr><th>Product</th><th>Best For</th><th>Finish</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Emulsion</td><td>Interior walls and ceilings</td><td>Smooth matt</td></tr>
+                    <tr><td>Matts Emulsion</td><td>Soft low-sheen interior designs</td><td>Matt</td></tr>
+                    <tr><td>Satin Silk</td><td>Premium washable interiors</td><td>Silky sheen</td></tr>
+                    <tr><td>Textcoat</td><td>Exterior texture and protection</td><td>Textured</td></tr>
+                    <tr><td>Flexcoat</td><td>Weather-exposed surfaces</td><td>Flexible coating</td></tr>
+                    <tr><td>POR</td><td>Special surface treatment</td><td>Protective coat</td></tr>
+                    <tr><td>Royalty Filler</td><td>Surface preparation</td><td>Wall filling</td></tr>
+                    <tr><td>Marine Coat</td><td>Special protective areas</td><td>Resistant coat</td></tr>
+                    <tr><td>Under Coat</td><td>Base preparation before painting</td><td>Primer support</td></tr>
+                    <tr><td>Gloss</td><td>Metal, wood and trims</td><td>Glossy</td></tr>
+                    <tr><td>Varnish / Royalty Wood Finish</td><td>Doors, furniture and woodwork</td><td>Clear / rich wood sheen</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding-sm">
+      <div class="container">
+        <div class="ad-card reveal">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <span class="section-kicker text-white">Need a Product Recommendation?</span>
+              <h2 class="display-5 mb-3">Tell us your surface, budget and colour idea.</h2>
+              <p class="mb-0">We will recommend the right product and finishing approach for your home, school, hotel, estate or commercial site.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end"><a class="btn btn-red btn-lg px-4 py-3" href="contact.html">Request Product Quote</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container position-relative">
+      <div class="row g-4">
+        <div class="col-lg-4 footer-brand"><span class="logo-swap">
+            <img class="theme-logo logo-for-light" src="assets/img/logo.png" alt="Royalty Paints logo">
+            <img class="theme-logo logo-for-dark" src="assets/img/logo-dark.png" alt="Royalty Paints logo">
+          </span><p class="mt-3">Manufacturers of quality paints and providers of professional finishing for residential, commercial and industrial projects.</p></div>
+        <div class="col-6 col-lg-2"><h3 class="footer-title">Pages</h3><a class="footer-link" href="index.html">Home</a><a class="footer-link" href="products.html">Products</a><a class="footer-link" href="projects.html">Projects</a><a class="footer-link" href="about.html">About</a></div>
+        <div class="col-lg-6"><h3 class="footer-title">Contact</h3><p class="mb-2"><a class="footer-contact-link" href="https://www.google.com/maps/search/?api=1&amp;query=36%2F38%20Feru%20Road%20Boluwatife%20B%2FStop%20Sango%20Ota%20Ogun%20State" target="_blank" rel="noopener">36/38, Feru Road, Boluwatife B/Stop, Sango Ota, Ogun State.</a></p><p class="mb-2"><a class="footer-contact-link" href="https://www.google.com/maps/search/?api=1&amp;query=1%20Yusuf%20Bisi%20Along%20Community%20Road%20Agodo%20Egbe%20beside%20Bewaji%20Filling%20Station%20Egbe%20Lagos" target="_blank" rel="noopener">1, Yusuf Bisi Along Community Road, Agodo Egbe, beside Bewaji Filling Station, Egbe, Lagos.</a></p><p class="mb-1"><strong>Tel:</strong> <a class="footer-contact-link" href="tel:+2347035109011">07035109011</a>, <a class="footer-contact-link" href="tel:+2348035655584">08035655584</a>, <a class="footer-contact-link" href="tel:+2349030025348">09030025348</a></p><p class="mb-0"><strong>Email:</strong> <a class="footer-contact-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=royaltypaintsnigerialtd%40gmail.com" target="_blank" rel="noopener">royaltypaintsnigerialtd@gmail.com</a></p></div>
+      </div>
+      <hr class="footer-line"><div class="d-flex flex-column flex-md-row justify-content-between gap-2 small"><span>© <span data-year></span> Royalty Paints. All rights reserved.</span></div>
+    </div>
+  </footer>
+
+  <a class="floating-whatsapp" href="https://wa.me/2347035109011?text=Hello%20Royalty%20Paints,%20I%20need%20product%20pricing" target="_blank" rel="noopener"><span class="wa-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="currentColor" focusable="false" aria-hidden="true"><path d="M16.04 3.2C8.97 3.2 3.24 8.93 3.24 16c0 2.26.6 4.46 1.73 6.4L3.2 28.8l6.57-1.72a12.74 12.74 0 0 0 6.27 1.63h.01c7.06 0 12.8-5.74 12.8-12.8 0-3.42-1.33-6.64-3.75-9.06a12.72 12.72 0 0 0-9.06-3.65zm0 23.04h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.6 10.6 0 0 1-1.63-5.66c0-5.87 4.78-10.64 10.65-10.64 2.84 0 5.51 1.11 7.52 3.12a10.57 10.57 0 0 1 3.12 7.53c0 5.87-4.78 10.63-10.66 10.63zm5.84-7.97c-.32-.16-1.89-.93-2.19-1.04-.29-.11-.5-.16-.71.16-.21.32-.82 1.04-1.01 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.89-1.78-2.21-.18-.32-.02-.5.14-.66.15-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.73-.98-2.36-.26-.62-.52-.54-.71-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66s1.14 3.08 1.3 3.29c.16.21 2.24 3.42 5.42 4.8.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.89-.77 2.15-1.52.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37z"/></svg></span><span class="wa-label">WhatsApp</span></a>
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

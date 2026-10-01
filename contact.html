@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Royalty Paints for paint supply, professional painting, colour consultation and project finishing in Lagos, Ogun and across Nigeria.">
+  <meta name="theme-color" content="#071b69">
+  <script>
+    (() => {
+      try {
+        const storedTheme = localStorage.getItem("royaltyTheme");
+        const theme = storedTheme === "light" || storedTheme === "dark" ? storedTheme : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+  <title>Contact & Quote | Royalty Paints</title>
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="expect" href="#rpHero" blocking="render">
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container header-shell">
+        <a class="navbar-brand brand-link" href="index.html" aria-label="Royalty Paints home">
+          <span class="logo-swap">
+            <img class="theme-logo logo-for-light" src="assets/img/logo.png" alt="Royalty Paints logo">
+            <img class="theme-logo logo-for-dark" src="assets/img/logo-dark.png" alt="Royalty Paints logo">
+          </span>
+        </a>
+        <input class="nav-toggle" type="checkbox" id="navToggle" aria-label="Open navigation menu">
+        <label class="menu-button" for="navToggle" aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <div class="site-menu">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="products.html">Products</a>
+          <a class="nav-link" href="projects.html">Projects</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link" href="index.html#reviews">Reviews</a>
+          <a class="nav-link" href="admin.html">Admin</a>
+          <a class="btn btn-royal nav-cta px-4 py-2" href="https://wa.me/2347035109011?text=Hello%20Royalty%20Paints,%20I%20need%20a%20paint%20quotation" target="_blank" rel="noopener">Get Quote</a>
+        </div>
+        <input class="theme-mode-checkbox header-theme-checkbox" type="checkbox" id="themeToggle" data-theme-toggle aria-label="Switch to dark mode">
+        <label class="theme-toggle-button header-theme-toggle" for="themeToggle" aria-label="Switch to dark mode">
+          <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">☀</span>
+          <span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">☾</span>
+        </label>
+        <script>
+          (() => {
+            const box = document.getElementById("themeToggle");
+            if (box) box.checked = document.documentElement.getAttribute("data-theme") !== "dark";
+          })();
+        </script>
+        <label class="menu-backdrop" for="navToggle" aria-hidden="true"></label>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="rpHero" class="page-hero">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 reveal">
+            <div class="breadcrumb-soft"><a href="index.html">Home</a><span>›</span><span>Contact</span></div>
+            <h1 class="page-title">Get a paint quote or book a site inspection.</h1>
+            <p class="section-copy max-720">Tell us about your building, paint need, preferred product or finishing style. We will respond through WhatsApp, phone or email.</p>
+            <div class="hero-actions">
+              <a class="btn btn-royal btn-lg px-4 py-3" href="https://wa.me/2347035109011?text=Hello%20Royalty%20Paints,%20I%20need%20a%20quotation" target="_blank" rel="noopener">Chat on WhatsApp</a>
+              <a class="btn btn-glass btn-lg px-4 py-3" href="tel:+2347035109011">Call 07035109011</a>
+            </div>
+          </div>
+          <div class="col-lg-5 reveal reveal-delay-1">
+            <div class="glass-card p-3 lift-card"><img class="rounded-4xl" src="assets/img/web/interior-finish.jpg" alt="Royalty Paints interior sample" style="height:420px;width:100%;object-fit:cover;" fetchpriority="high" decoding="sync"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding-sm">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-3 reveal"><div class="contact-card glass-card lift-card"><div class="contact-icon">☎</div><h3 class="text-royal fw-bold h5">Phone</h3><p class="mb-2"><a href="tel:+2347035109011">07035109011</a></p><p class="mb-2"><a href="tel:+2348035655584">08035655584</a></p><p class="mb-0"><a href="tel:+2349030025348">09030025348</a></p></div></div>
+          <div class="col-md-6 col-xl-3 reveal reveal-delay-1"><div class="contact-card glass-card lift-card"><div class="contact-icon">✉</div><h3 class="text-royal fw-bold h5">Email</h3><p class="mb-0"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=royaltypaintsnigerialtd%40gmail.com" target="_blank" rel="noopener">royaltypaintsnigerialtd@gmail.com</a></p></div></div>
+          <div class="col-md-6 col-xl-3 reveal reveal-delay-2"><div class="contact-card glass-card lift-card"><div class="contact-icon">⌂</div><h3 class="text-royal fw-bold h5">Ogun Office</h3><p class="mb-0"><a href="https://www.google.com/maps/search/?api=1&amp;query=36%2F38%20Feru%20Road%20Boluwatife%20B%2FStop%20Sango%20Ota%20Ogun%20State" target="_blank" rel="noopener">36/38, Feru Road, Boluwatife B/Stop, Sango Ota, Ogun State.</a></p></div></div>
+          <div class="col-md-6 col-xl-3 reveal reveal-delay-3"><div class="contact-card glass-card lift-card"><div class="contact-icon">⌖</div><h3 class="text-royal fw-bold h5">Lagos Office</h3><p class="mb-0"><a href="https://www.google.com/maps/search/?api=1&amp;query=1%20Yusuf%20Bisi%20Along%20Community%20Road%20Agodo%20Egbe%20beside%20Bewaji%20Filling%20Station%20Egbe%20Lagos" target="_blank" rel="noopener">1, Yusuf Bisi Along Community Road, Agodo Egbe, beside Bewaji Filling Station, Egbe, Lagos.</a></p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding-sm">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5 reveal">
+            <span class="section-kicker">Quote Form</span>
+            <h2 class="section-title display-5">Send project details straight to WhatsApp.</h2>
+            <p class="section-copy">Send your project details through WhatsApp with one tap.</p>
+            <ul class="list-check mt-4">
+              <li>Tell us if you need paint supply, finishing, or both.</li>
+              <li>Add project location for faster site inspection planning.</li>
+              <li>Include product type if you already know what you need.</li>
+            </ul>
+          </div>
+          <div class="col-lg-7 reveal reveal-delay-1">
+            <form class="quote-form glass-card" data-quote-form>
+              <div class="row g-3">
+                <div class="col-md-6"><label class="form-label fw-bold text-royal">Your Name</label><input class="form-control" name="name" placeholder="e.g. Mr. Ade" required></div>
+                <div class="col-md-6"><label class="form-label fw-bold text-royal">Service Needed</label><select class="form-select" name="service"><option>Paint supply</option><option>Professional painting</option><option>Paint supply + finishing</option><option>Before/after renovation painting</option><option>Colour consultation</option></select></div>
+                <div class="col-md-6"><label class="form-label fw-bold text-royal">Project Location</label><input class="form-control" name="location" placeholder="Town / State"></div>
+                <div class="col-12"><label class="form-label fw-bold text-royal">Project Details</label><textarea class="form-control" name="message" rows="5" placeholder="Tell us about rooms, exterior area, preferred colour, product type, timeline..."></textarea></div>
+                <div class="col-12"><button class="btn btn-royal btn-lg w-100 py-3" type="submit">Prepare WhatsApp Message</button></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding-sm">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-7 reveal">
+            <div class="glass-card p-4 p-lg-5 h-100">
+              <span class="section-kicker">Office Direction</span>
+              <h2 class="section-title display-6 mb-4">Visit or call before coming.</h2>
+              <div class="row g-3">
+                <div class="col-md-6"><div class="contact-card glass-card"><h3 class="text-royal fw-bold h5">Sango Ota, Ogun</h3><p class="mb-0"><a href="https://www.google.com/maps/search/?api=1&amp;query=36%2F38%20Feru%20Road%20Boluwatife%20B%2FStop%20Sango%20Ota%20Ogun%20State" target="_blank" rel="noopener">36/38, Feru Road, Boluwatife B/Stop, Sango Ota, Ogun State.</a></p></div></div>
+                <div class="col-md-6"><div class="contact-card glass-card"><h3 class="text-royal fw-bold h5">Egbe, Lagos</h3><p class="mb-0"><a href="https://www.google.com/maps/search/?api=1&amp;query=1%20Yusuf%20Bisi%20Along%20Community%20Road%20Agodo%20Egbe%20beside%20Bewaji%20Filling%20Station%20Egbe%20Lagos" target="_blank" rel="noopener">1, Yusuf Bisi Along Community Road, Agodo Egbe, beside Bewaji Filling Station, Egbe, Lagos.</a></p></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 reveal reveal-delay-1">
+            <div class="ad-card h-100 d-flex flex-column justify-content-center">
+              <span class="section-kicker text-white">Fast Action</span>
+              <h2 class="h1 mb-3">Need paint urgently?</h2>
+              <p>Call or WhatsApp for availability, recommended quantities and delivery/finishing schedule.</p>
+              <a class="btn btn-red btn-lg px-4 py-3 align-self-start" href="tel:+2347035109011">Call Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container position-relative">
+      <div class="row g-4">
+        <div class="col-lg-4 footer-brand"><span class="logo-swap">
+            <img class="theme-logo logo-for-light" src="assets/img/logo.png" alt="Royalty Paints logo">
+            <img class="theme-logo logo-for-dark" src="assets/img/logo-dark.png" alt="Royalty Paints logo">
+          </span><p class="mt-3">Contact us for paint supply, professional finishing and project support.</p></div>
+        <div class="col-6 col-lg-2"><h3 class="footer-title">Pages</h3><a class="footer-link" href="index.html">Home</a><a class="footer-link" href="products.html">Products</a><a class="footer-link" href="projects.html">Projects</a><a class="footer-link" href="about.html">About</a></div>
+        <div class="col-6 col-lg-2"><h3 class="footer-title">Services</h3><a class="footer-link" href="products.html">Paint Supply</a><a class="footer-link" href="projects.html">Finishing</a><a class="footer-link" href="contact.html">Quote Request</a></div>
+        <div class="col-lg-4"><h3 class="footer-title">Contact</h3><p class="mb-2"><a class="footer-contact-link" href="https://www.google.com/maps/search/?api=1&amp;query=36%2F38%20Feru%20Road%20Boluwatife%20B%2FStop%20Sango%20Ota%20Ogun%20State" target="_blank" rel="noopener">36/38, Feru Road, Boluwatife B/Stop, Sango Ota, Ogun State.</a></p><p class="mb-2"><a class="footer-contact-link" href="https://www.google.com/maps/search/?api=1&amp;query=1%20Yusuf%20Bisi%20Along%20Community%20Road%20Agodo%20Egbe%20beside%20Bewaji%20Filling%20Station%20Egbe%20Lagos" target="_blank" rel="noopener">1, Yusuf Bisi Along Community Road, Agodo Egbe, beside Bewaji Filling Station, Egbe, Lagos.</a></p><p class="mb-1"><strong>Tel:</strong> <a class="footer-contact-link" href="tel:+2347035109011">07035109011</a>, <a class="footer-contact-link" href="tel:+2348035655584">08035655584</a>, <a class="footer-contact-link" href="tel:+2349030025348">09030025348</a></p><p class="mb-0"><strong>Email:</strong> <a class="footer-contact-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=royaltypaintsnigerialtd%40gmail.com" target="_blank" rel="noopener">royaltypaintsnigerialtd@gmail.com</a></p></div>
+      </div>
+      <hr class="footer-line"><div class="d-flex flex-column flex-md-row justify-content-between gap-2 small"><span>© <span data-year></span> Royalty Paints. All rights reserved.</span><span>Quote form opens WhatsApp.</span></div>
+    </div>
+  </footer>
+
+  <a class="floating-whatsapp" href="https://wa.me/2347035109011?text=Hello%20Royalty%20Paints,%20I%20need%20a%20quotation" target="_blank" rel="noopener"><span class="wa-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="currentColor" focusable="false" aria-hidden="true"><path d="M16.04 3.2C8.97 3.2 3.24 8.93 3.24 16c0 2.26.6 4.46 1.73 6.4L3.2 28.8l6.57-1.72a12.74 12.74 0 0 0 6.27 1.63h.01c7.06 0 12.8-5.74 12.8-12.8 0-3.42-1.33-6.64-3.75-9.06a12.72 12.72 0 0 0-9.06-3.65zm0 23.04h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.6 10.6 0 0 1-1.63-5.66c0-5.87 4.78-10.64 10.65-10.64 2.84 0 5.51 1.11 7.52 3.12a10.57 10.57 0 0 1 3.12 7.53c0 5.87-4.78 10.63-10.66 10.63zm5.84-7.97c-.32-.16-1.89-.93-2.19-1.04-.29-.11-.5-.16-.71.16-.21.32-.82 1.04-1.01 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.89-1.78-2.21-.18-.32-.02-.5.14-.66.15-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.73-.98-2.36-.26-.62-.52-.54-.71-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66s1.14 3.08 1.3 3.29c.16.21 2.24 3.42 5.42 4.8.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.89-.77 2.15-1.52.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37z"/></svg></span><span class="wa-label">WhatsApp</span></a>
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

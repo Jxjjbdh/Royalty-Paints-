@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#071b69">
+  <script>
+    (() => {
+      try {
+        const storedTheme = localStorage.getItem("royaltyTheme");
+        const theme = storedTheme === "light" || storedTheme === "dark" ? storedTheme : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+  <title>Admin Panel | Royalty Paints</title>
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="expect" href="#rpHero" blocking="render">
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container header-shell">
+        <a class="navbar-brand brand-link" href="index.html" aria-label="Royalty Paints home">
+          <span class="logo-swap">
+            <img class="theme-logo logo-for-light" src="assets/img/logo.png" alt="Royalty Paints logo">
+            <img class="theme-logo logo-for-dark" src="assets/img/logo-dark.png" alt="Royalty Paints logo">
+          </span>
+        </a>
+        <input class="nav-toggle" type="checkbox" id="navToggle" aria-label="Open navigation menu">
+        <label class="menu-button" for="navToggle" aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <div class="site-menu">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="products.html">Products</a>
+          <a class="nav-link" href="projects.html">Projects</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link" href="index.html#reviews">Reviews</a>
+          <a class="nav-link" href="admin.html">Admin</a>
+          <a class="btn btn-royal nav-cta px-4 py-2" href="https://wa.me/2347035109011?text=Hello%20Royalty%20Paints,%20I%20need%20a%20paint%20quotation" target="_blank" rel="noopener">Get Quote</a>
+        </div>
+        <input class="theme-mode-checkbox header-theme-checkbox" type="checkbox" id="themeToggle" data-theme-toggle aria-label="Switch to dark mode">
+        <label class="theme-toggle-button header-theme-toggle" for="themeToggle" aria-label="Switch to dark mode">
+          <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">☀</span>
+          <span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">☾</span>
+        </label>
+        <script>
+          (() => {
+            const box = document.getElementById("themeToggle");
+            if (box) box.checked = document.documentElement.getAttribute("data-theme") !== "dark";
+          })();
+        </script>
+        <label class="menu-backdrop" for="navToggle" aria-hidden="true"></label>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="rpHero" class="page-hero">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 reveal">
+            <div class="breadcrumb-soft"><a href="index.html">Home</a><span>›</span><span>Admin</span></div>
+            <h1 class="page-title">Admin panel for before/after project pictures.</h1>
+            <p class="section-copy max-720">Upload project pictures, delete old ones, export backups and import them later.</p>
+          </div>
+          <div class="col-lg-5 reveal reveal-delay-1">
+            <div class="glass-card p-4 lift-card">
+              <div class="admin-note mb-3"><strong>Admin access:</strong> enter your PIN to continue.</div>
+              <img src="assets/img/web/royalty-swatch.jpg" alt="Royalty Paints colour strip" class="rounded-4xl" fetchpriority="high" decoding="sync">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding-sm">
+      <div class="container">
+        <div id="adminStatus" class="alert d-none rounded-4" role="status"></div>
+
+        <div id="adminLoginArea" class="pin-box glass-card reveal">
+          <span class="section-kicker">Secure Area</span>
+          <h2 class="section-title display-6 mb-3">Enter admin PIN.</h2>
+          <p class="section-copy">Enter the admin PIN to manage project photos.</p>
+          <form id="adminLoginForm" class="row g-3">
+            <div class="col-12"><input class="form-control form-control-lg" name="pin" type="password" inputmode="numeric" placeholder="Enter PIN" required></div>
+            <div class="col-12"><button class="btn btn-royal btn-lg w-100 py-3" type="submit">Unlock Admin Panel</button></div>
+          </form>
+        </div>
+
+        <div id="adminDashboard" class="d-none">
+          <div class="admin-layout">
+            <aside class="admin-panel glass-card reveal">
+              <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
+                <div>
+                  <span class="section-kicker">Upload</span>
+                  <h2 class="section-title h1 mb-0">New project</h2>
+                </div>
+                <button class="btn btn-glass btn-sm" id="logoutAdmin" type="button">Logout</button>
+              </div>
+              <p class="section-copy">Add any project gallery picture: a single photo or a before/after comparison.</p>
+
+              <form id="adminProjectForm" class="row g-3">
+                <div class="col-12"><label class="form-label fw-bold text-royal">Gallery Item Type</label><select class="form-select" id="galleryMode" name="mode"><option value="single">Single project photo</option><option value="compare">Before/after comparison</option></select></div>
+                <div class="col-12"><label class="form-label fw-bold text-royal">Project Title</label><input class="form-control" name="title" placeholder="e.g. Lekki duplex exterior repaint" required></div>
+                <div class="col-12"><label class="form-label fw-bold text-royal">Project Category</label><select class="form-select" name="type"><option>Residential Interior</option><option>Exterior Painting</option><option>Commercial Project</option><option>School / Hotel / Office</option><option>Wood & Gloss Finish</option><option>Other Paint Project</option></select></div>
+                <div class="col-12 file-drop" data-single-upload><label class="form-label fw-bold text-royal">Project Picture</label><input class="form-control" id="mainImage" type="file" accept="image/*"><small class="text-muted">Gallery photo</small></div>
+                <div class="col-12 file-drop d-none" data-compare-upload><label class="form-label fw-bold text-royal">Before Picture</label><input class="form-control" id="beforeImage" type="file" accept="image/*"><small class="text-muted">Before photo</small></div>
+                <div class="col-12 file-drop d-none" data-compare-upload><label class="form-label fw-bold text-royal">After Picture</label><input class="form-control" id="afterImage" type="file" accept="image/*"><small class="text-muted">After photo</small></div>
+                <div class="col-12"><label class="form-label fw-bold text-royal">Short Notes</label><textarea class="form-control" name="notes" rows="4" placeholder="Products used, location, colour, result..."></textarea></div>
+                <div class="col-12"><button class="btn btn-royal btn-lg w-100 py-3" type="submit">Add To Gallery</button></div>
+              </form>
+
+              <hr class="my-4">
+              <div class="admin-note">
+                This panel controls the project gallery pictures.
+              </div>
+            </aside>
+
+            <section class="admin-panel glass-card reveal reveal-delay-1">
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+                <div>
+                  <span class="section-kicker">Manage Gallery</span>
+                  <h2 class="section-title h1 mb-0"><span id="projectCount">0</span> gallery items</h2>
+                </div>
+                <div class="admin-toolbar">
+                  <button class="btn btn-glass" id="exportProjects" type="button">Export Backup</button>
+                  <label class="btn btn-glass mb-0" for="importProjects">Import Backup</label>
+                  <input class="d-none" id="importProjects" type="file" accept="application/json">
+                </div>
+              </div>
+
+              <div class="default-manager glass-card p-3 p-md-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-3">
+                  <div>
+                    <span class="section-kicker">Default Samples</span>
+                    <h3 class="text-royal fw-black h2 mb-1">Built-in gallery pictures</h3>
+                    <p class="section-copy mb-0">Select, hide or restore the default gallery pictures.</p>
+                  </div>
+                </div>
+                <div class="admin-toolbar mb-3">
+                  <label class="admin-select-all"><input type="checkbox" id="selectAllDefaultProjects"> Select all defaults</label>
+                  <button class="btn btn-outline-danger" id="hideSelectedDefaults" type="button">Delete/Hide Selected</button>
+                  <button class="btn btn-glass" id="restoreSelectedDefaults" type="button">Restore Selected</button>
+                  <button class="btn btn-glass" id="restoreAllDefaults" type="button">Restore All Defaults</button>
+                </div>
+                <div id="defaultProjectList" class="admin-list"></div>
+              </div>
+
+              <div class="admin-toolbar mb-3 mt-4">
+                <label class="admin-select-all"><input type="checkbox" id="selectAllProjects"> Select all uploaded</label>
+                <button class="btn btn-outline-danger" id="deleteSelectedProjects" type="button">Delete Selected</button>
+                <button class="btn btn-glass" id="moveSelectedProjectsUp" type="button">Move Up</button>
+                <button class="btn btn-glass" id="moveSelectedProjectsDown" type="button">Move Down</button>
+              </div>
+              <div id="adminProjectList" class="admin-list"></div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container position-relative">
+      <div class="row g-4">
+        <div class="col-lg-4 footer-brand"><span class="logo-swap">
+            <img class="theme-logo logo-for-light" src="assets/img/logo.png" alt="Royalty Paints logo">
+            <img class="theme-logo logo-for-dark" src="assets/img/logo-dark.png" alt="Royalty Paints logo">
+          </span><p class="mt-3">Admin tools for managing project photos.</p></div>
+        <div class="col-6 col-lg-2"><h3 class="footer-title">Pages</h3><a class="footer-link" href="index.html">Home</a><a class="footer-link" href="products.html">Products</a><a class="footer-link" href="projects.html">Projects</a><a class="footer-link" href="contact.html">Contact</a></div>
+        <div class="col-6 col-lg-2"><h3 class="footer-title">Admin</h3><a class="footer-link" href="projects.html#projectFilterBar">Gallery</a></div>
+        <div class="col-lg-4"><h3 class="footer-title">Contact</h3><p class="mb-2"><a class="footer-contact-link" href="https://www.google.com/maps/search/?api=1&amp;query=36%2F38%20Feru%20Road%20Boluwatife%20B%2FStop%20Sango%20Ota%20Ogun%20State" target="_blank" rel="noopener">36/38, Feru Road, Boluwatife B/Stop, Sango Ota, Ogun State.</a></p><p class="mb-2"><a class="footer-contact-link" href="https://www.google.com/maps/search/?api=1&amp;query=1%20Yusuf%20Bisi%20Along%20Community%20Road%20Agodo%20Egbe%20beside%20Bewaji%20Filling%20Station%20Egbe%20Lagos" target="_blank" rel="noopener">1, Yusuf Bisi Along Community Road, Agodo Egbe, beside Bewaji Filling Station, Egbe, Lagos.</a></p><p class="mb-1"><strong>Tel:</strong> <a class="footer-contact-link" href="tel:+2347035109011">07035109011</a>, <a class="footer-contact-link" href="tel:+2348035655584">08035655584</a>, <a class="footer-contact-link" href="tel:+2349030025348">09030025348</a></p><p class="mb-0"><strong>Email:</strong> <a class="footer-contact-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=royaltypaintsnigerialtd%40gmail.com" target="_blank" rel="noopener">royaltypaintsnigerialtd@gmail.com</a></p></div>
+      </div>
+      <hr class="footer-line"><div class="d-flex flex-column flex-md-row justify-content-between gap-2 small"><span>© <span data-year></span> Royalty Paints. All rights reserved.</span><span>Project gallery management.</span></div>
+    </div>
+  </footer>
+
+  <a class="floating-whatsapp" href="projects.html#projectFilterBar"><span>↗</span><span>Gallery</span></a>
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

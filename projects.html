@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="View Royalty Paints before and after painting projects, exterior finishing, satin interiors, textcoat samples and admin-uploaded project photos.">
+  <meta name="theme-color" content="#071b69">
+  <script>
+    (() => {
+      try {
+        const storedTheme = localStorage.getItem("royaltyTheme");
+        const theme = storedTheme === "light" || storedTheme === "dark" ? storedTheme : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+  <title>Projects & Before/After Gallery | Royalty Paints</title>
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="expect" href="#rpHero" blocking="render">
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container header-shell">
+        <a class="navbar-brand brand-link" href="index.html" aria-label="Royalty Paints home">
+          <span class="logo-swap">
+            <img class="theme-logo logo-for-light" src="assets/img/logo.png" alt="Royalty Paints logo">
+            <img class="theme-logo logo-for-dark" src="assets/img/logo-dark.png" alt="Royalty Paints logo">
+          </span>
+        </a>
+        <input class="nav-toggle" type="checkbox" id="navToggle" aria-label="Open navigation menu">
+        <label class="menu-button" for="navToggle" aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <div class="site-menu">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="products.html">Products</a>
+          <a class="nav-link" href="projects.html">Projects</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link" href="index.html#reviews">Reviews</a>
+          <a class="nav-link" href="admin.html">Admin</a>
+          <a class="btn btn-royal nav-cta px-4 py-2" href="https://wa.me/2347035109011?text=Hello%20Royalty%20Paints,%20I%20need%20a%20paint%20quotation" target="_blank" rel="noopener">Get Quote</a>
+        </div>
+        <input class="theme-mode-checkbox header-theme-checkbox" type="checkbox" id="themeToggle" data-theme-toggle aria-label="Switch to dark mode">
+        <label class="theme-toggle-button header-theme-toggle" for="themeToggle" aria-label="Switch to dark mode">
+          <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">☀</span>
+          <span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">☾</span>
+        </label>
+        <script>
+          (() => {
+            const box = document.getElementById("themeToggle");
+            if (box) box.checked = document.documentElement.getAttribute("data-theme") !== "dark";
+          })();
+        </script>
+        <label class="menu-backdrop" for="navToggle" aria-hidden="true"></label>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="rpHero" class="page-hero">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 reveal">
+            <div class="breadcrumb-soft"><a href="index.html">Home</a><span>›</span><span>Projects</span></div>
+            <h1 class="page-title">Before & after project gallery.</h1>
+            <p class="section-copy max-720">Show clients the difference Royalty Paints can make. This page includes sample generated projects and a dynamic section for your admin-uploaded before/after photos.</p>
+            <div class="hero-actions">
+              <a class="btn btn-royal btn-lg px-4 py-3" href="contact.html">Book Site Inspection</a>
+              <a class="btn btn-glass btn-lg px-4 py-3" href="products.html">View Paint Products</a>
+            </div>
+          </div>
+          <div class="col-lg-5 reveal reveal-delay-1">
+            <div class="glass-card p-3 lift-card">
+              <img class="rounded-4xl" src="assets/img/web/exterior-finish.jpg" alt="Freshly painted exterior project" style="height:430px;width:100%;object-fit:cover;" fetchpriority="high" decoding="sync">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding-sm pt-0" id="projectFilterBar">
+      <div class="container">
+        <div class="project-filter-compact glass-card">
+          <label class="filter-pill" for="projectCategoryFilter">
+            <span class="filter-icon">▦</span>
+            <select id="projectCategoryFilter" aria-label="Filter projects by category">
+              <option value="all">All</option>
+              <option value="Residential Interior">Interior</option>
+              <option value="Exterior Painting">Exterior</option>
+              <option value="Commercial Project">Commercial</option>
+              <option value="Wood & Gloss Finish">Wood/Gloss</option>
+              <option value="Other Paint Project">Other</option>
+            </select>
+          </label>
+          <label class="filter-pill" for="projectSortSelect">
+            <span class="filter-icon">⇅</span>
+            <select id="projectSortSelect" aria-label="Sort projects">
+              <option value="featured">Featured</option>
+              <option value="newest">Newest</option>
+              <option value="az">A-Z</option>
+              <option value="za">Z-A</option>
+            </select>
+          </label>
+          <button class="filter-reset" id="resetProjectFilters" type="button" aria-label="Reset project filters">↺</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding-sm" data-default-section>
+      <div class="container">
+        <div class="text-center max-720 mx-auto mb-5 reveal">
+          <span class="section-kicker">Sample Transformations</span>
+          <h2 class="section-title display-5">Drag to compare finishes.</h2>
+          <p class="section-copy mb-0">Browse project transformations by category and finish type.</p>
+        </div>
+        <div class="row g-4" data-project-list>
+          <div class="col-lg-6 reveal" data-default-project="interior-sample" data-project-item data-category="Residential Interior" data-title="Satin Silk Living Room Finish" data-date="2026-01-01">
+            <article class="ba-card glass-card lift-card h-100">
+              <div class="ba-slider">
+                <img src="assets/img/web/before-interior.jpg" alt="Before living room repaint" class="ba-before">
+                <div class="ba-after"><img src="assets/img/web/interior-finish.jpg" alt="After satin living room finish"></div>
+                <span class="ba-label after">After</span><span class="ba-label before">Before</span><span class="ba-handle">↔</span>
+                <input class="ba-range" type="range" min="5" max="95" value="54" aria-label="Compare living room before and after">
+              </div>
+              <div class="ba-content"><span class="tag">Residential Interior</span><h3 class="mt-2">Satin Silk Living Room Finish</h3><p>Smooth prep, refined colour selection and premium satin sheen.</p></div>
+            </article>
+          </div>
+          <div class="col-lg-6 reveal reveal-delay-1" data-default-project="exterior-sample" data-project-item data-category="Exterior Painting" data-title="Weather-Ready Exterior Coating" data-date="2026-01-02">
+            <article class="ba-card glass-card lift-card h-100">
+              <div class="ba-slider">
+                <img src="assets/img/web/before-exterior.jpg" alt="Before house exterior repaint" class="ba-before">
+                <div class="ba-after"><img src="assets/img/web/exterior-finish.jpg" alt="After exterior repaint"></div>
+                <span class="ba-label after">After</span><span class="ba-label before">Before</span><span class="ba-handle">↔</span>
+                <input class="ba-range" type="range" min="5" max="95" value="56" aria-label="Compare exterior before and after">
+              </div>
+              <div class="ba-content"><span class="tag">Exterior Protection</span><h3 class="mt-2">Weather-Ready Exterior Coating</h3><p>Fresh colour, sharper trims and long-lasting surface protection.</p></div>
+            </article>
+          </div>
+        </div>
+        <div class="row g-4 mt-1" id="storedProjects" data-project-list></div>
+      </div>
+    </section>
+
+    <section class="section-padding-sm">
+      <div class="container">
+        <div class="row align-items-end mb-4 g-3">
+          <div class="col-lg-8 reveal">
+            <span class="section-kicker">More Project Samples</span>
+            <h2 class="section-title display-5">Advertising-ready project cards.</h2>
+          </div>
+          <div class="col-lg-4 text-lg-end reveal reveal-delay-1"><a class="btn btn-glass" href="products.html">Match with Products</a></div>
+        </div>
+        <div class="row g-4" data-project-list>
+          <div class="col-md-6 col-xl-4 reveal" data-default-project="premium-interior-sample" data-project-item data-category="Residential Interior" data-title="Premium Interior Walls" data-date="2026-01-03">
+            <article class="product-card glass-card lift-card">
+              <img class="product-thumb" src="assets/img/web/interior-finish.jpg" alt="Interior paint project">
+              <h3>Premium Interior Walls</h3>
+              <p>Recommended for living rooms, hotels, reception spaces and premium residential projects.</p>
+              <div class="product-tags"><span class="tag">Satin</span><span class="tag">Interior</span></div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4 reveal reveal-delay-1" data-default-project="exterior-facade-sample" data-project-item data-category="Exterior Painting" data-title="Exterior Facade Refresh" data-date="2026-01-04">
+            <article class="product-card glass-card lift-card">
+              <img class="product-thumb" src="assets/img/web/exterior-finish.jpg" alt="Exterior paint project">
+              <h3>Exterior Facade Refresh</h3>
+              <p>Clean compound presence, stronger weather protection and attractive colour contrast.</p>
+              <div class="product-tags"><span class="tag">Exterior</span><span class="tag">Flexcoat</span></div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4 reveal reveal-delay-2" data-default-project="wood-gloss-sample" data-project-item data-category="Wood & Gloss Finish" data-title="Wood & Gloss Details" data-date="2026-01-05">
+            <article class="product-card glass-card lift-card">
+              <img class="product-thumb" src="assets/img/web/wood-gloss-sample.jpg" alt="Wood gloss finish project">
+              <h3>Wood & Gloss Details</h3>
+              <p>Doors, rails and trim details finished with a warm refined look and easy-clean surface.</p>
+              <div class="product-tags"><span class="tag">Gloss</span><span class="tag">Wood finish</span></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding-sm">
+      <div class="container">
+        <div class="ad-card reveal">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <span class="section-kicker text-white">Have a project site?</span>
+              <h2 class="display-5 mb-3">Let Royalty Paints handle supply and finishing.</h2>
+              <p class="mb-0">We can inspect, recommend products, prepare surfaces and deliver a clean professional finish.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end"><a class="btn btn-red btn-lg px-4 py-3" href="contact.html">Start a Project</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container position-relative">
+      <div class="row g-4">
+        <div class="col-lg-4 footer-brand"><span class="logo-swap">
+            <img class="theme-logo logo-for-light" src="assets/img/logo.png" alt="Royalty Paints logo">
+            <img class="theme-logo logo-for-dark" src="assets/img/logo-dark.png" alt="Royalty Paints logo">
+          </span><p class="mt-3">Quality paints, professional finishing and smooth project delivery.</p></div>
+        <div class="col-6 col-lg-2"><h3 class="footer-title">Pages</h3><a class="footer-link" href="index.html">Home</a><a class="footer-link" href="products.html">Products</a><a class="footer-link" href="projects.html">Projects</a><a class="footer-link" href="about.html">About</a></div>
+        <div class="col-6 col-lg-2"><h3 class="footer-title">Actions</h3><a class="footer-link" href="admin.html">Gallery</a><a class="footer-link" href="contact.html">Request Quote</a><a class="footer-link" href="products.html">Product List</a></div>
+        <div class="col-lg-4"><h3 class="footer-title">Contact</h3><p class="mb-2"><a class="footer-contact-link" href="https://www.google.com/maps/search/?api=1&amp;query=36%2F38%20Feru%20Road%20Boluwatife%20B%2FStop%20Sango%20Ota%20Ogun%20State" target="_blank" rel="noopener">36/38, Feru Road, Boluwatife B/Stop, Sango Ota, Ogun State.</a></p><p class="mb-2"><a class="footer-contact-link" href="https://www.google.com/maps/search/?api=1&amp;query=1%20Yusuf%20Bisi%20Along%20Community%20Road%20Agodo%20Egbe%20beside%20Bewaji%20Filling%20Station%20Egbe%20Lagos" target="_blank" rel="noopener">1, Yusuf Bisi Along Community Road, Agodo Egbe, beside Bewaji Filling Station, Egbe, Lagos.</a></p><p class="mb-1"><strong>Tel:</strong> <a class="footer-contact-link" href="tel:+2347035109011">07035109011</a>, <a class="footer-contact-link" href="tel:+2348035655584">08035655584</a>, <a class="footer-contact-link" href="tel:+2349030025348">09030025348</a></p><p class="mb-0"><strong>Email:</strong> <a class="footer-contact-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=royaltypaintsnigerialtd%40gmail.com" target="_blank" rel="noopener">royaltypaintsnigerialtd@gmail.com</a></p></div>
+      </div>
+      <hr class="footer-line"><div class="d-flex flex-column flex-md-row justify-content-between gap-2 small"><span>© <span data-year></span> Royalty Paints. All rights reserved.</span><span>Before/after project gallery.</span></div>
+    </div>
+  </footer>
+
+  <a class="floating-whatsapp" href="https://wa.me/2347035109011?text=Hello%20Royalty%20Paints,%20I%20want%20to%20paint%20my%20project" target="_blank" rel="noopener"><span class="wa-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="currentColor" focusable="false" aria-hidden="true"><path d="M16.04 3.2C8.97 3.2 3.24 8.93 3.24 16c0 2.26.6 4.46 1.73 6.4L3.2 28.8l6.57-1.72a12.74 12.74 0 0 0 6.27 1.63h.01c7.06 0 12.8-5.74 12.8-12.8 0-3.42-1.33-6.64-3.75-9.06a12.72 12.72 0 0 0-9.06-3.65zm0 23.04h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.6 10.6 0 0 1-1.63-5.66c0-5.87 4.78-10.64 10.65-10.64 2.84 0 5.51 1.11 7.52 3.12a10.57 10.57 0 0 1 3.12 7.53c0 5.87-4.78 10.63-10.66 10.63zm5.84-7.97c-.32-.16-1.89-.93-2.19-1.04-.29-.11-.5-.16-.71.16-.21.32-.82 1.04-1.01 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.89-1.78-2.21-.18-.32-.02-.5.14-.66.15-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.73-.98-2.36-.26-.62-.52-.54-.71-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66s1.14 3.08 1.3 3.29c.16.21 2.24 3.42 5.42 4.8.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.89-.77 2.15-1.52.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37z"/></svg></span><span class="wa-label">WhatsApp</span></a>
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
